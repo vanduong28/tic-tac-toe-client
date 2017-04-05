@@ -1,19 +1,6 @@
 'use strict'
 
 const gameBoard = new Array(9)
-// const newGame = function () {
-//   let moveCount = 0
-//   let currentPlayer = player_x
-//   let gameBoard = []
-// }
-//
-// const isEmpty = function () {
-//  if (gameBoard === []) {
-//    console.log('yay')
-//  } else {
-//    console.log('boo')
-//  }
-// }
 
 // game board index
 // 0|1|2
@@ -57,6 +44,5 @@ const checkWin = function () {
 }
 
 module.exports = {
-  // isEmpty,
   checkWin
 }

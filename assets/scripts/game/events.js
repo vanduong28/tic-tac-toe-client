@@ -4,35 +4,27 @@
 // const gameUi = require('./ui.js')
 // const getFormFields = require('../../../lib/get-form-fields')
 
-// const onStart = function () {
-//   let gameBoard = []
-//   let currentPlayer = player_x
-// }
-//
-// let currentPlayer = playerX
-//
-// const setLetter = function () {
-//
+const player1 = 'X'
+const player2 = 'O'
+let currentPlayer = player2
+let moveCount = 0
+const gameBoard = new Array(9)
 
-// }
 const handleClick = function (event) {
   event.preventDefault()
   const cell = this.id
   console.log('cell is: ', cell)
+  if (moveCount < 9) {
+    $('#' + cell).html(currentPlayer = currentPlayer === player1 ? player2 : player1)
+    $('#' + cell).off('click')
+    gameBoard.push(cell)
+    console.log(gameBoard)
+    moveCount = moveCount += 1
+  } else if (moveCount >= 9) {
+    console.log('draw!')
+  }
+  console.log('move count is: ', moveCount)
 }
-
-// currentPlayer = null
-// playerX = null
-//
-// const newGame = function (event) {
-//   console.log('new game')
-//   const gameBoard = new Array(9)
-//   let moveCount = 0
-//   let currentPlayer = playerX
-  // console.log(gameBoard)
-  // console.log(moveCount)
-  // console.log(currentPlayer)
-// }
 
 // const switchPlayer = function () {
 //   if (currentPlayer === playerX) {
@@ -45,5 +37,4 @@ const handleClick = function (event) {
 
 module.exports = {
   handleClick
-  // newGame
 }

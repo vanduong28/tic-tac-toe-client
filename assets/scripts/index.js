@@ -16,7 +16,7 @@ require('./example')
 const game = require('./game/events')
 
 $(() => {
-  // initialize new game
+  // initialize new game (removed method for now?)
   $(document).ready(game.newGame)
   // on cell click run handleClick method
   $('.col-xs-4').on('click', game.handleClick)
