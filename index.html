@@ -37,5 +37,58 @@
         <div class="btn-container">
         <button type="button" class="new-game-button btn btn-primary">New Game</button>
       </div>
+
+
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signUp-modal">
+      Sign Up
+      </button>
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signIn-modal">
+      Login
+      </button>
+
+<!-- Sign Up Modal -->
+<div class="modal fade" id="signUp-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <form id="sign-up">
+          <div class="form-group">
+            <input type="text" name="credentials[email]" id="sign-up-email" placeholder="Email">
+            <input type="password" name="credentials[password]" id="sign-up-password" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" id="sign-up-password-confirmation" placeholder="Confirm Password">
+            <input type="submit" name="submit" value="Sign up!">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Signin Modal -->
+<div class="modal fade" id="signIn-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Login</h4>
+      </div>
+      <div class="modal-body">
+        <form id="sign-in">
+          <div class="form-group">
+            <input type="text" name="user" placeholder="Email">
+            <input type="password" name="pass" placeholder="Password">
+            <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
     </body>
 </html>

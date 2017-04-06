@@ -1,8 +1,8 @@
 'use strict'
 
-// const gameApi = require('./api.js')
-// const gameUi = require('./ui.js')
-// const getFormFields = require('../../../lib/get-form-fields')
+const gameApi = require('./api.js')
+const gameUi = require('./ui.js')
+const getFormFields = require('../../../lib/get-form-fields')
 
 const player1 = 'X'
 const player2 = 'O'
@@ -106,7 +106,23 @@ const newGame = function (event) {
   $('.game-message').text('')
 }
 
+const onSignUp = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  console.log('sign up button clicked')
+  gameApi.signUp(data)
+    .then(gameUi.signInSuccess)
+    .catch(gameUi.signInFailure)
+}
+
+const onSignIn = function (event) {
+//  const data = getFormFields(this)
+  event.preventDefault()
+  console.log('login button clicked')
+}
 module.exports = {
   handleClick,
-  newGame
+  newGame,
+  onSignUp,
+  onSignIn
 }
