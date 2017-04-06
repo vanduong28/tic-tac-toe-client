@@ -6,21 +6,31 @@ h1 {
 }
 
 .game-board {
-  height: 600px;
+  height: 450px;
   margin: auto;
-  width: 600px;
+  width: 450px;
 }
 
 .col-xs-4 {
   background: #add8e6;
   border: 1px solid;
-  font-size: 150px;
-  height: 200px;
+  font-size: 100px;
+  height: 150px;
   text-align: center;
-  width: 200px;
+  width: 150px;
 }
 
 .game-message {
   font-size: 20px;
+  text-align: center;
+}
+
+.btn-container {
+  margin: auto;
+  text-align: center;
+}
+
+.new-game-button {
+  margin: 0 auto;
   text-align: center;
 }

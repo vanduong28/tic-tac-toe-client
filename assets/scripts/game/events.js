@@ -11,7 +11,6 @@ let moveCount = 0
 let gameBoard = new Array(9)
 
 const handleClick = function (event) {
-  console.log('ready to play')
   event.preventDefault()
   const cell = this.id
   console.log('cell is: ', cell)
@@ -22,6 +21,8 @@ const handleClick = function (event) {
     $('#' + cell).off('click')
 
     // identify index of the cell that was clicked
+    // extract number from div id
+    // convert string to integer
     const indexOfCellClicked = parseInt(cell[4])
     // update gameBoard array at index with letter
     gameBoard[indexOfCellClicked] = currentPlayer
@@ -72,7 +73,7 @@ const handleClick = function (event) {
         console.log('O wins')
       }
     } else if (moveCount >= 9) {
-      $('.game-message').text('Everyone loses!')
+      $('.game-message').text('No winner!')
       console.log('draw!')
     }
     // }
@@ -101,6 +102,8 @@ const newGame = function (event) {
   // don't include () for handleClick b/c this is a callback and shouldn't run
   // each time newGame is called
   $('.col-xs-4').on('click', handleClick)
+  // remove game message so it doesn't continue to display
+  $('.game-message').text('')
 }
 
 module.exports = {
