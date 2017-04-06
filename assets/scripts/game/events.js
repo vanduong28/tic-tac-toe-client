@@ -134,10 +134,21 @@ const onSignOut = function (event) {
     .catch(gameUi.signOutFailure)
 }
 
+const changePassword = function (event) {
+  event.preventDefault()
+  console.log('change password ran')
+
+  const data = getFormFields(this)
+  gameApi.changePassword(data)
+    .then(gameUi.changePasswordSuccess)
+    .catch(gameUi.changePasswordFailure)
+}
+
 module.exports = {
   handleClick,
   newGame,
   onSignUp,
   onSignIn,
-  onSignOut
+  onSignOut,
+  changePassword
 }

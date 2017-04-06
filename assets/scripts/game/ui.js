@@ -23,10 +23,20 @@ const signInFailure = (error) => {
 const signOutSuccess = () => {
   console.log('signOut success ran. and nothing was returned')
   store.user = null
+  $('#signOut-modal').modal('hide')
 }
 
 const signOutFailure = (error) => {
   console.error('signOut failure ran. error is: ', error)
+}
+
+const changePasswordSuccess = (data) => {
+  console.log('change password success. data is: ', data)
+  $('#changePasswordLabel').text('Password successfully changed')
+}
+
+const changePasswordFailure = (error) => {
+  console.error('change password failure ran. error is: ', error)
 }
 
 module.exports = {
@@ -35,5 +45,7 @@ module.exports = {
   signInSuccess,
   signInFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  changePasswordSuccess,
+  changePasswordFailure
 }
