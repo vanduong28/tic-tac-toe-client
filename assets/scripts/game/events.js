@@ -111,15 +111,20 @@ const onSignUp = function (event) {
   event.preventDefault()
   console.log('sign up button clicked')
   gameApi.signUp(data)
+    .then(gameUi.signUpSuccess)
+    .catch(gameUi.signUpFailure)
+}
+
+const onSignIn = function (event) {
+  event.preventDefault()
+  console.log('sign in ran')
+
+  const data = getFormFields(this)
+  gameApi.signIn(data)
     .then(gameUi.signInSuccess)
     .catch(gameUi.signInFailure)
 }
 
-const onSignIn = function (event) {
-//  const data = getFormFields(this)
-  event.preventDefault()
-  console.log('login button clicked')
-}
 module.exports = {
   handleClick,
   newGame,
