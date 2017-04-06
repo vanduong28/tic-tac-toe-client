@@ -45,6 +45,9 @@
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signIn-modal">
       Sign In
       </button>
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signOut-modal">
+      Sign Out
+      </button>
 
 <!-- Sign Up Modal -->
 <div class="modal fade" id="signUp-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -83,11 +86,33 @@
             <input type="text" name="credentials[email]" id="sign-in-email" placeholder="Email">
             <input type="password" name="credentials[password]" id="sign-in-password" placeholder="Password">
             <input type="submit" name="submit" value="Sign in">
+          </div>
         </form>
         </div>
       </div>
     </div>
   </div>
+
+
+  <!-- Signout Modal -->
+  <div class="modal fade" id="signOut-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Sign Out</h4>
+        </div>
+        <div class="modal-body">
+          <form id="sign-out">
+            <div class="form-group">
+              <input type="submit" name="submit" value="Sign out">
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     </body>
 </html>

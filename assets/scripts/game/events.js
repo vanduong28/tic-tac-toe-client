@@ -125,9 +125,19 @@ const onSignIn = function (event) {
     .catch(gameUi.signInFailure)
 }
 
+const onSignOut = function (event) {
+  event.preventDefault()
+  console.log('sign out ran')
+
+  gameApi.signOut()
+    .then(gameUi.signOutSuccess)
+    .catch(gameUi.signOutFailure)
+}
+
 module.exports = {
   handleClick,
   newGame,
   onSignUp,
-  onSignIn
+  onSignIn,
+  onSignOut
 }
