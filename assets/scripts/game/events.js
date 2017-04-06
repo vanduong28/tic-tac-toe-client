@@ -21,7 +21,7 @@ const handleClick = function (event) {
     $('#' + cell).off('click')
 
     // identify index of the cell that was clicked
-    // extract number from div id
+    // extract integer from div id
     // convert string to integer
     const indexOfCellClicked = parseInt(cell[4])
     // update gameBoard array at index with letter
