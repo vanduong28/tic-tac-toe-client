@@ -1,8 +1,8 @@
 'use strict'
 
-// const gameApi = require('./api.js')
-// const gameUi = require('./ui.js')
-// const getFormFields = require('../../../lib/get-form-fields')
+const gameApi = require('./api.js')
+const gameUi = require('./ui.js')
+const getFormFields = require('../../../lib/get-form-fields')
 
 const player1 = 'X'
 const player2 = 'O'
@@ -106,7 +106,49 @@ const newGame = function (event) {
   $('.game-message').text('')
 }
 
+const onSignUp = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  console.log('sign up button clicked')
+  gameApi.signUp(data)
+    .then(gameUi.signUpSuccess)
+    .catch(gameUi.signUpFailure)
+}
+
+const onSignIn = function (event) {
+  event.preventDefault()
+  console.log('sign in ran')
+
+  const data = getFormFields(this)
+  gameApi.signIn(data)
+    .then(gameUi.signInSuccess)
+    .catch(gameUi.signInFailure)
+}
+
+const onSignOut = function (event) {
+  event.preventDefault()
+  console.log('sign out ran')
+
+  gameApi.signOut()
+    .then(gameUi.signOutSuccess)
+    .catch(gameUi.signOutFailure)
+}
+
+const changePassword = function (event) {
+  event.preventDefault()
+  console.log('change password ran')
+
+  const data = getFormFields(this)
+  gameApi.changePassword(data)
+    .then(gameUi.changePasswordSuccess)
+    .catch(gameUi.changePasswordFailure)
+}
+
 module.exports = {
   handleClick,
-  newGame
+  newGame,
+  onSignUp,
+  onSignIn,
+  onSignOut,
+  changePassword
 }
