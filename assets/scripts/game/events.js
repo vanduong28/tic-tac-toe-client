@@ -8,7 +8,8 @@ const player1 = 'X'
 const player2 = 'O'
 let currentPlayer = player1
 let moveCount = 0
-let gameBoard = new Array(9)
+let gameBoard = ['', '', '', '', '', '', '', '', '']
+// let gameBoard = new Array(9)
 
 const handleClick = function (event) {
   event.preventDefault()
@@ -28,7 +29,11 @@ const handleClick = function (event) {
     gameBoard[indexOfCellClicked] = currentPlayer
 
     console.log(gameBoard)
-    // const checkWin = function () {
+    // pass index to game object
+    gameApi.updateGame(indexOfCellClicked, currentPlayer)
+    .then(gameUi.updateGameSuccess)
+    .catch(gameUi.updateGameFailure)
+
     if (gameBoard[0] === gameBoard[1] && gameBoard[0] === gameBoard[2] ||
         gameBoard[0] === gameBoard[3] && gameBoard[0] === gameBoard[6] ||
         gameBoard[0] === gameBoard[4] && gameBoard[0] === gameBoard[8]) {
@@ -75,8 +80,10 @@ const handleClick = function (event) {
     } else if (moveCount >= 9) {
       $('.game-message').text('No winner!')
       console.log('draw!')
+      gameApi.updateOver()
+      .then(gameUi.updateOverSuccess)
+      .catch(gameUi.updateOverFailure)
     }
-    // }
   }
   currentPlayer = currentPlayer === player1 ? player2 : player1
   console.log('move count is: ', moveCount)
@@ -85,6 +92,9 @@ const handleClick = function (event) {
 const markGameWon = function (winnerLetter) {
   $('.game-message').text('Player ' + winnerLetter + ' wins!')
   $('.col-xs-4').off('click')
+  gameApi.updateOver()
+  .then(gameUi.updateOverSuccess)
+  .catch(gameUi.updateOverFailure)
 }
 
 // instead of setting variables, store response of ajax call to server?
@@ -96,7 +106,8 @@ const newGame = function (event) {
 // set currentPlayer to player1
   currentPlayer = player1
 // empty game board
-  gameBoard = new Array(9)
+  // gameBoard = new Array(9)
+  gameBoard = ['', '', '', '', '', '', '', '', '']
   // reset cell event listeners
  // turn off event listener to prevent duplicate listeners
   $('.col-xs-4').off('click')
@@ -106,6 +117,9 @@ const newGame = function (event) {
   // remove game message so it doesn't continue to display
   $('.game-message').text('')
   // create game object
+  gameApi.createGame()
+    .then(gameUi.createGameSuccess)
+    .catch(gameUi.createGameFailure)
 }
 
 const onSignUp = function (event) {

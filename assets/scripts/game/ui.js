@@ -1,5 +1,6 @@
 'use strict'
 const store = require('../store')
+const game = require('../game')
 
 const signUpSuccess = (data) => {
   console.log(data)
@@ -39,6 +40,31 @@ const changePasswordFailure = (error) => {
   console.error('change password failure ran. error is: ', error)
 }
 
+const createGameSuccess = (data) => {
+  console.log('data is: ', data)
+  game.game = data.game
+  console.log(game.game)
+}
+
+const createGameFailure = (error) => {
+  console.error(error)
+}
+
+const updateGameSuccess = (data) => {
+  console.log('update game success. data is: ', data)
+}
+
+const updateGameFailure = (error) => {
+  console.error(error)
+}
+
+const updateOverSuccess = (data) => {
+  console.log('update OVER to TRUE data is: ', data)
+}
+
+const updateOverFailure = (error) => {
+  console.error(error)
+}
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -47,5 +73,11 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  createGameSuccess,
+  createGameFailure,
+  updateGameSuccess,
+  updateGameFailure,
+  updateOverSuccess,
+  updateOverFailure
 }
