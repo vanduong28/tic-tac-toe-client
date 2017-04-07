@@ -51,7 +51,7 @@ const createGame = (data) => {
     headers: {
       Authorization: 'Token token=' + store.store.token
     },
-    // set an empty object?
+    // set an empty object
     data: '{}'
   })
 }

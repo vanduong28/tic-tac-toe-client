@@ -1,10 +1,15 @@
 #!/bin/bash
-curl --include --request POST "http://localhost:4741/games" \
+curl --include --request POST "http://localhost:4741/" \
     --header "Content-Type: application/json" \
     --data '{
       "game": {
         "id": 20,
-        "cells": ["O", "X", "O", "X", "O", "X", "X", "O", "X"]
+        "cells": []
         "over": true
+        "player_x": {
+          "id":
+          "email": "'"${EMAIL}"'",
+        },
+        "player_o": null
       }
     }'

@@ -87,6 +87,7 @@ const markGameWon = function (winnerLetter) {
   $('.col-xs-4').off('click')
 }
 
+// instead of setting variables, store response of ajax call to server?
 const newGame = function (event) {
 // empty board with no letters populated
   $('.col-xs-4').empty()
@@ -104,6 +105,7 @@ const newGame = function (event) {
   $('.col-xs-4').on('click', handleClick)
   // remove game message so it doesn't continue to display
   $('.game-message').text('')
+  // create game object
 }
 
 const onSignUp = function (event) {
