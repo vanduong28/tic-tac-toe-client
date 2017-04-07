@@ -2,6 +2,7 @@
 
 const config = require('../config')
 const store = require('../store')
+// const game = require('../../../game_tracker/game.js')
 
 const signUp = (data) => {
   console.log('data is: ', data)
@@ -41,9 +42,33 @@ const changePassword = (data) => {
     data: data
   })
 }
+
+const createGame = (data) => {
+  console.log('game is: ', data)
+  return $.ajax({
+    url: config.apiOrigin + '/games',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.store.token
+    },
+    // set an empty object?
+    data: '{}'
+  })
+}
+
+// const showGame = (data) => {
+//   console.log('game is: ', data)
+//   return $.ajax({
+//     url: config.apiOrigin + '/games',
+//     method: 'POST',
+//     data: data
+//   })
+// }
+
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  createGame
 }
