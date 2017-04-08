@@ -160,11 +160,25 @@ const changePassword = function (event) {
     .catch(gameUi.changePasswordFailure)
 }
 
+const getPlayerStats = function (event) {
+  event.preventDefault()
+  console.log('get player stats clicked')
+  gameApi.getStats()
+    .then(gameUi.getStatsSuccess)
+    .catch(gameUi.getStatsFailure)
+}
+
+const hideBoard = function (event) {
+  $('.game-board').hide()
+}
+
 module.exports = {
   handleClick,
   newGame,
   onSignUp,
   onSignIn,
   onSignOut,
-  changePassword
+  changePassword,
+  getPlayerStats,
+  hideBoard
 }

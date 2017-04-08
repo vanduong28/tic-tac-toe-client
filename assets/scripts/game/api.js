@@ -92,6 +92,17 @@ const updateOver = () => {
   })
 }
 
+const getStats = () => {
+  console.log('get player stats')
+  return $.ajax({
+    url: config.apiOrigin + '/games/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -99,5 +110,6 @@ module.exports = {
   changePassword,
   createGame,
   updateGame,
-  updateOver
+  updateOver,
+  getStats
 }

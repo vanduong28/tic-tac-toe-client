@@ -5,6 +5,7 @@ const game = require('../game')
 const signUpSuccess = (data) => {
   console.log(data)
   $('#signUp-modal').modal('hide')
+  $('.game-board').show()
 }
 
 const signUpFailure = (error) => {
@@ -15,6 +16,7 @@ const signInSuccess = (data) => {
   console.log('signIn success ran. data is: ', data)
   store.user = data.user
   $('#signIn-modal').modal('hide')
+  $('.game-board').show()
 }
 
 const signInFailure = (error) => {
@@ -65,6 +67,16 @@ const updateOverSuccess = (data) => {
 const updateOverFailure = (error) => {
   console.error(error)
 }
+
+const getStatsSuccess = (data) => {
+  console.log('stats displayed: ', data)
+  const gameTotal = Object.keys(data.games).length
+  $('#player-stats-message').text("You've played " + gameTotal + ' games!')
+}
+
+const getStatsFailure = (error) => {
+  console.error(error)
+}
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -79,5 +91,7 @@ module.exports = {
   updateGameSuccess,
   updateGameFailure,
   updateOverSuccess,
-  updateOverFailure
+  updateOverFailure,
+  getStatsSuccess,
+  getStatsFailure
 }

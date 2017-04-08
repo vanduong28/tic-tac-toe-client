@@ -28,6 +28,9 @@
   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#changePassword-modal">
             Change Password
           </button>
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#getStats-modal" id="player-stats">
+          Get Player Stats
+          </button>
 </div><br/>
   <!-- Sign Up Modal -->
   <div class="modal fade" id="signUp-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -135,10 +138,28 @@
       </div>
     </div>
   </div><br/>
-  <div class="player-info">Player Information
-  </div>
   <div class="btn-container">
     <button type="button" class="new-game-button btn btn-primary">New Game</button>
+  </div>
+
+
+  <!-- Get Stats Modal -->
+  <div class="modal fade" id="getStats-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="player-stats-message">Player game stats</h4>
+        </div>
+        <div class="modal-body">
+          <form id="get-stats">
+            <div class="form-group">
+              <input type="submit" name="submit" value="Ok">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 
 </body>
