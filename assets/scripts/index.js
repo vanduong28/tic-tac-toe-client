@@ -18,6 +18,8 @@ const game = require('./game/events')
 $(() => {
   // $(document).ready(game.newGame)
   $(document).ready(game.hideBoard)
+  $(document).ready(game.hideNewGameBtn)
+  $(document).ready(game.hideButtons)
   $('.new-game-button').on('click', game.newGame)
   $('#sign-up').on('submit', game.onSignUp)
   $('#sign-in').on('submit', game.onSignIn)

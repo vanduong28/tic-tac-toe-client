@@ -5,7 +5,7 @@ const store = require('../store')
 const game = require('../game')
 
 const signUp = (data) => {
-  console.log('data is: ', data)
+  // console.log('data is: ', data)
   return $.ajax({
     url: config.apiOrigin + '/sign-up',
     method: 'POST',
@@ -32,7 +32,7 @@ const signOut = () => {
 }
 
 const changePassword = (data) => {
-  console.log('data is ', data)
+  // console.log('data is ', data)
   return $.ajax({
     url: config.apiOrigin + '/change-password/' + store.user.id,
     method: 'PATCH',
@@ -44,7 +44,7 @@ const changePassword = (data) => {
 }
 
 const createGame = () => {
-  console.log('new game created')
+  // console.log('new game created')
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'POST',
@@ -57,7 +57,7 @@ const createGame = () => {
 }
 
 const updateGame = (index, letter) => {
-  console.log('update game to server.')
+  // console.log('update game to server.')
   return $.ajax({
     url: config.apiOrigin + '/games/' + game.game.id,
     method: 'PATCH',
@@ -77,7 +77,7 @@ const updateGame = (index, letter) => {
 }
 
 const updateOver = () => {
-  console.log('send over value to server.')
+  // console.log('send over value to server.')
   return $.ajax({
     url: config.apiOrigin + '/games/' + game.game.id,
     method: 'PATCH',
@@ -93,7 +93,7 @@ const updateOver = () => {
 }
 
 const getStats = () => {
-  console.log('get player stats')
+  // console.log('get player stats')
   return $.ajax({
     url: config.apiOrigin + '/games/',
     method: 'GET',
