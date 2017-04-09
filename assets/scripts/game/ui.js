@@ -2,8 +2,8 @@
 const store = require('../store')
 const game = require('../game')
 
-const signUpSuccess = (data) => {
-  console.log(data)
+const signUpSuccess = () => {
+  // console.log(data)
   $('#signUp-modal').modal('hide')
   $('.game-prompt').hide()
   $('.sign-up-btn').hide()
@@ -19,8 +19,9 @@ const signInSuccess = (data) => {
   // console.log('signIn success ran. data is: ', data)
   store.user = data.user
   $('#signIn-modal').modal('hide')
-  $('.game-prompt').text('')
+  $('.game-prompt').hide()
   $('.new-game-prompt').text('Click new game to get started')
+  $('.sign-in-prompt').text('')
   $('.new-game-button').show()
   $('.hide-on-start').show()
   $('.sign-up-btn').hide()
@@ -33,7 +34,7 @@ const signInFailure = () => {
 }
 
 const signOutSuccess = () => {
-  console.log('signOut success ran. and nothing was returned')
+  // console.log('signOut success ran. and nothing was returned')
   store.user = null
   $('#signOut-modal').modal('hide')
   $('.game-board').hide()
@@ -46,8 +47,8 @@ const signOutSuccess = () => {
   $('.new-game-prompt').text('')
 }
 
-const signOutFailure = (error) => {
-  console.error('signOut failure ran. error is: ', error)
+const signOutFailure = () => {
+  // console.error('signOut failure ran. error is: ', error)
 }
 
 const changePasswordSuccess = () => {

@@ -39,7 +39,7 @@ const handleClick = function (event) {
         gameBoard[0] === gameBoard[4] && gameBoard[0] === gameBoard[8]) {
       if (gameBoard[0] === 'X') {
         markGameWon(currentPlayer)
-        console.log('X wins')
+        // console.log('X wins')
       } else if (gameBoard[0] === 'O') {
         markGameWon(currentPlayer)
         // console.log('O wins')
