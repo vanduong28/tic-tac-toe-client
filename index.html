@@ -15,27 +15,32 @@
 
 <body class="container-fluid">
   <h1>Tic Tac Toe</h1>
-
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signUp-modal">
+<div class="button-functions">
+  <button type="button" class="sign-up-btn btn-primary btn-lg" data-toggle="modal" data-target="#signUp-modal">
             Sign Up
             </button>
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signIn-modal">
+  <button type="button" class="sign-in-btn btn-primary btn-lg" data-toggle="modal" data-target="#signIn-modal">
             Sign In
-            </button>
+          </button>
+  <div class="hide-on-start">
   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signOut-modal">
             Sign Out
             </button>
   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#changePassword-modal">
             Change Password
           </button>
-
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#getStats-modal" id="player-stats">
+          Get Player Stats
+          </button>
+  </div>
+</div><br/>
   <!-- Sign Up Modal -->
   <div class="modal fade" id="signUp-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+          <h4 class="modal-title" id="sign-up-modal-label">Sign Up</h4>
         </div>
         <div class="modal-body">
           <form id="sign-up">
@@ -58,7 +63,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+          <h4 class="modal-title" id="sign-in-modal-label">Sign In</h4>
         </div>
         <div class="modal-body">
           <form id="sign-in">
@@ -114,6 +119,9 @@
       </div>
     </div>
   </div>
+  <div class="game-prompt">Sign up or sign in to start playing!</div>
+  <div class="sign-in-prompt"></div>
+  <div class="new-game-prompt"></div>
   <div class="game-message">
   </div>
   <div class="container">
@@ -137,6 +145,26 @@
   </div><br/>
   <div class="btn-container">
     <button type="button" class="new-game-button btn btn-primary">New Game</button>
+  </div>
+
+
+  <!-- Get Stats Modal -->
+  <div class="modal fade" id="getStats-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="player-stats-message">How many games have you played?</h4>
+        </div>
+        <div class="modal-body">
+          <form id="get-stats">
+            <div class="form-group">
+              <input type="submit" name="submit" value="Check">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 
 </body>
