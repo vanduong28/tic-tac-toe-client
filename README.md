@@ -27,15 +27,15 @@ https://vanduong28.github.io/tic-tac-toe-client/
 
 ## Challenges
 -   Developing game logic: I created majority of my logic in one long function.
-- While I knew it wasn't a best practice it was the easiest way for me to work
-- through development. If I had more time I would go through and separate the
-- the function into smaller functions. This would make it easier for others to
-- understand but also to allow for greater flexibility when making changes in
-- the future without breaking the entire game logic.
+While I knew it wasn't a best practice it was the easiest way for me to work
+through development. If I had more time I would go through and separate the
+the function into smaller functions. This would make it easier for others to
+understand but also to allow for greater flexibility when making changes in
+the future without breaking the entire game logic.
 -   Developing game action server calls: I struggled with identifying how to
-- pass game information to the server. I had to better understand the "contract"
-- between the client and server and determine what fields had to be passed in
-- order to correctly update the objects. Once I
+pass game information to the server. I had to better understand the "contract"
+between the client and server and determine what fields had to be passed in
+order to correctly update the objects.
 
 ## Open issues
 Input fields in the modals remain populated after being initially populated.

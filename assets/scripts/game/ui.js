@@ -19,6 +19,7 @@ const signUpFailure = () => {
 const signInSuccess = (data) => {
   // console.log('signIn success ran. data is: ', data)
   store.user = data.user
+  $('#sign-in-modal-label').text('Sign In')
   $('#signIn-modal').modal('hide')
   $('.game-prompt').hide()
   $('.new-game-prompt').text('Click new game to get started')
@@ -28,7 +29,6 @@ const signInSuccess = (data) => {
   $('.sign-up-btn').hide()
   $('.sign-in-btn').hide()
   $('.game-message').text(' ')
-  $('#sign-in-modal-label').text('Sign in')
 }
 
 const signInFailure = () => {
