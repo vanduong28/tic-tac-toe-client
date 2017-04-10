@@ -19,6 +19,13 @@ first wins.
 ## URL
 https://vanduong28.github.io/tic-tac-toe-client/
 
+## Technologoies Used
+-   HTML
+-   CSS
+-   jQuery
+-   Ajax
+-   JavaScript
+
 ## Approach
 1. Create simple game board using html/css
 2. Develop game logic - how to determine when there is a winner or tie
