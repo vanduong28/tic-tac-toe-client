@@ -116,6 +116,8 @@ const newGame = function (event) {
   $('.col-xs-4').on('click', handleClick)
   // remove game message so it doesn't continue to display
   $('.game-message').text('')
+  // remove message to click button to start new game
+  $('.new-game-prompt').text('')
   // create game object
   gameApi.createGame()
     .then(gameUi.createGameSuccess)
