@@ -8,6 +8,7 @@ const signUpSuccess = () => {
   $('.game-prompt').hide()
   $('.sign-up-btn').hide()
   $('.sign-in-prompt').text('Sign in to start playing!')
+  $('.game-message').text(' ')
 }
 
 const signUpFailure = () => {
@@ -21,11 +22,13 @@ const signInSuccess = (data) => {
   $('#signIn-modal').modal('hide')
   $('.game-prompt').hide()
   $('.new-game-prompt').text('Click new game to get started')
-  $('.sign-in-prompt').text('')
+  $('.sign-in-prompt').text(' ')
   $('.new-game-button').show()
   $('.hide-on-start').show()
   $('.sign-up-btn').hide()
   $('.sign-in-btn').hide()
+  $('.game-message').text(' ')
+  $('#sign-in-modal-label').text('Sign in')
 }
 
 const signInFailure = () => {
@@ -40,7 +43,7 @@ const signOutSuccess = () => {
   $('.game-board').hide()
   $('.new-game-button').hide()
   $('.hide-on-start').hide()
-  $('.game-prompt').text('')
+  $('.game-prompt').text(' ')
   $('.game-message').text('Sign up or sign in to start playing!')
   $('.sign-up-btn').show()
   $('.sign-in-btn').show()
